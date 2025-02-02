@@ -1,13 +1,15 @@
 let boxes=document.querySelectorAll(".box")
 let resetBtn= document.querySelector("#reset")
-let  newGameBtn=document.querySelector('#newBtn');
+let newGameBtn=document.querySelector('#newBtn');
 let msgContaner=document.querySelector('.msg-container')
 let msg =document.querySelector('#msg')
-let xval=document.querySelector('#xWins')
-let Oval=document.querySelector('#oWins')
+let Oval=document.querySelector('#xWins')
+let xval=document.querySelector('#oWins')
 let draw=document.querySelector('#draws')
+let role=document.querySelector('.start')
 let turnO= true;
 let num=0;
+let start=true
 
 const winPattern =[
     [0,1,2],
@@ -46,16 +48,19 @@ const newGame=()=>{
     enableBtn();
     msgContaner.classList.add('hide')
     xval.innerText=Oval.innerText=draw.innerText=0;
+    xnum=onum=drnum=1
 }
 
-const reserGame=()=>
-{
-    turnO=true;
+const reserGame = () => {
+    console.log(turnO);
+    turnO = turncheck(); 
+    console.log(turnO)
     enableBtn();
-    msgContaner.classList.add('hide')
+    msgContaner.classList.add('hide');
+    role.classList.remove('hide');
+    role.innerText = turnO ? "player1 start" : "player2 start";
+};
 
-   
-}
 const enableBtn=()=>
 {
     for (let box of boxes)
@@ -71,12 +76,15 @@ const disableBtn=()=>{
         box.disabled=true;
     }
 }
+const roleHide=()=>{
+    role.classList.add('hide');
+}
 
 const showWinner =(winner)=>{
     msg.innerText=`Congratulations!, Winner is ${winner}`
     msgContaner.classList.remove('hide')
 }
-
+boxes.forEach(box => box.addEventListener('click', roleHide));
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
@@ -90,9 +98,8 @@ boxes.forEach((box) => {
         box.disabled = true;
 
         let winner = checkWinner();
-        // Check for a winner first
         if (!winner) {
-            checkDraw(); // Check for a draw only if no winner
+            checkDraw(); 
         }
     });
 });
@@ -111,11 +118,12 @@ const checkDraw = () => {
         msg.innerText = "It's a Draw!";
         msgContaner.classList.remove("hide");
         tableInc('draw');
+        turnO=turncheck();
         disableBtn();
     }
 };
 
-const checkWinner=(()=>
+const checkWinner=()=>
 {
     for(let patten of winPattern)
     {
@@ -137,7 +145,20 @@ const checkWinner=(()=>
         }
     }
     
-})
+}
+const turncheck=()=>
+{
+    if (start === true)
+    {
+        turnO =false
+        start =false
+    }
+    else{
+        turnO= true
+        start=true
+    }
+    return turnO
+}
 
 
 newGameBtn.addEventListener('click',newGame);
