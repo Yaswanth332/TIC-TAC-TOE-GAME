@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC-TAC-TOE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&family=Bungee&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="msg-container hide">
+        <p id='msg'>Winner</p>
+    </div>
+    <main class="main">
+        <span>TIC-TAC-TOE</span>
+        <div class="total">
+            <div class="container">
+                <div class="game">
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>  
+                </div>
+            </div>
+            <div class="but">
+                <button type="reset" id="reset">Reset Game</button>
+                <button id="newBtn">New Game</button>
+            </div>
+        </div>
+        
+        <h2>Scoreboard</h2>
+        <div class="scoreboard">
+            <table>
+                <tr>
+                    <th>Player</th>
+                    <th>Wins</th>
+                </tr>
+                <tr>
+                    <td>X</td>
+                    <td id="xWins">0</td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td id="oWins">0</td>
+                </tr>
+                <tr>
+                    <td>Draws</td>
+                    <td id="draws">0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
