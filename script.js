@@ -58,7 +58,7 @@ const reserGame = () => {
     enableBtn();
     msgContaner.classList.add('hide');
     role.classList.remove('hide');
-    role.innerText = turnO ? "player1 start" : "player2 start";
+    role.innerHTML = turnO ? "<p>Player 1 starts!</p>" : "<p>Player 2 starts!</p>";
 };
 
 const enableBtn=()=>

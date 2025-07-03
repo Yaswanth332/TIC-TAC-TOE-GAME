@@ -13,64 +13,77 @@
     <div class="msg-container hide">
         <p id="msg">Winner</p>
     </div>
-    <div class="start" class>
-        <p>player1  starts! </p>
-    </div>
+    
     <main class="main">
-        <span>TIC-TAC-TOE</span>
+        <h1>TIC-TAC-TOE</h1>
+        
+        <div class="start">
+            <p>Player 1 starts!</p>
+        </div>
+        
         <div class="total">
             <div class="container">
                 <div class="game">
-                    <button class="box"></button>
-                    <button class="box"></button>
-                    <button class="box"></button>
-                    <button class="box"></button>
-                    <button class="box"></button>
-                    <button class="box"></button>
-                    <button class="box"></button>
-                    <button class="box"></button>
-                    <button class="box"></button>  
+                    <button class="box" aria-label="Cell 1"></button>
+                    <button class="box" aria-label="Cell 2"></button>
+                    <button class="box" aria-label="Cell 3"></button>
+                    <button class="box" aria-label="Cell 4"></button>
+                    <button class="box" aria-label="Cell 5"></button>
+                    <button class="box" aria-label="Cell 6"></button>
+                    <button class="box" aria-label="Cell 7"></button>
+                    <button class="box" aria-label="Cell 8"></button>
+                    <button class="box" aria-label="Cell 9"></button>  
                 </div>
             </div>
+            
             <div class="but">
-                <button type="reset" id="reset">Reset Game</button>
-                <button id="newBtn">New Game</button>
+                <button type="button" id="reset">
+                    <i class="fas fa-redo-alt"></i> Reset Game
+                </button>
+                <button type="button" id="newBtn">
+                    <i class="fas fa-plus"></i> New Game
+                </button>
             </div>
         </div>
         
-        <h2>Scoreboard</h2>
-        <div class="scoreboard">
-            <table>
-                <tr>
-                    <th>Player</th>
-                    <th>Wins</th>
-                </tr>
-                <tr>
-                    <td>player1</td>
-                    <td id="xWins">0</td>
-                </tr>
-                <tr>
-                    <td>player2</td>
-                    <td id="oWins">0</td>
-                </tr>
-                <tr>
-                    <td>Draws</td>
-                    <td id="draws">0</td>
-                </tr>
-            </table>
-        </div>
-    </div>
+        <section class="scoreboard-section">
+            <h2>Scoreboard</h2>
+            <div class="scoreboard">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Wins</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Player 1 (O)</td>
+                            <td id="xWins">0</td>
+                        </tr>
+                        <tr>
+                            <td>Player 2 (X)</td>
+                            <td id="oWins">0</td>
+                        </tr>
+                        <tr>
+                            <td>Draws</td>
+                            <td id="draws">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
-    <footer >
+    
+    <footer>
         <p>&copy; 2025 JK All Rights Reserved.</p>
-        <a href="https://github.com/Yaswanth332" target="_blank">
-            <i class="fa-brands fa-github" style="font-size: 30px;"></i>
+        <a href="https://github.com/Yaswanth332" target="_blank" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/jonnalagaddayaswanthkrishna/" target="_blank">
-            <i class="fa-brands fa-linkedin" style="font-size: 30px; color: #0A66C2;"></i>
+        <a href="https://www.linkedin.com/in/jonnalagaddayaswanthkrishna/" target="_blank" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin"></i>
         </a>
     </footer>
-    
 
     <script src="script.js"></script>
 </body>
